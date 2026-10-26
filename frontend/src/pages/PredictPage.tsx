@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import {
   Sparkles, DollarSign, Clock, Calendar, Globe, Building2,
-  Layers, ShieldAlert, CheckCircle2, TrendingUp, HelpCircle,
-  Info, Compass, ChevronRight, Save, Sliders, AlertTriangle
+  CheckCircle2, Compass, Sliders, AlertTriangle
 } from 'lucide-react';
 import { api } from '../services/api';
 import type { PredictionResult, SimilarMovieItem } from '../types';
@@ -35,14 +34,14 @@ export const PredictPage: React.FC<PredictPageProps> = ({ onNavigateToHistory })
   const [isFranchise, setIsFranchise] = useState(1);
   const [rentalRate, setRentalRate] = useState(0.50);
   const [paMultiplier, setPaMultiplier] = useState(0.65);
-  const [notes, setNotes] = useState('Summer tentpole blockbuster targeting worldwide release.');
+  const [notes] = useState('Summer tentpole blockbuster targeting worldwide release.');
 
   // UI State
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<PredictionResult | null>(null);
   const [similarMovies, setSimilarMovies] = useState<SimilarMovieItem[]>([]);
-  const [loadingSimilar, setLoadingSimilar] = useState(false);
+  const [, setLoadingSimilar] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [savedSuccess, setSavedSuccess] = useState(false);
 
@@ -181,8 +180,8 @@ export const PredictPage: React.FC<PredictPageProps> = ({ onNavigateToHistory })
                     type="button"
                     onClick={() => setBudget(preset.val)}
                     className={`px-2.5 py-1 rounded-lg text-[11px] font-medium transition-colors ${budget === preset.val
-                        ? 'bg-indigo-600 text-white shadow-sm'
-                        : 'bg-slate-800/80 text-slate-400 hover:text-white hover:bg-slate-700'
+                      ? 'bg-indigo-600 text-white shadow-sm'
+                      : 'bg-slate-800/80 text-slate-400 hover:text-white hover:bg-slate-700'
                       }`}
                   >
                     {preset.label}
@@ -219,8 +218,8 @@ export const PredictPage: React.FC<PredictPageProps> = ({ onNavigateToHistory })
                       type="button"
                       onClick={() => toggleGenre(g)}
                       className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all ${isSelected
-                          ? 'bg-gradient-to-r from-indigo-600 to-indigo-500 text-white shadow-md shadow-indigo-600/20 border border-indigo-400/40'
-                          : 'bg-slate-900 border border-slate-800 text-slate-400 hover:text-slate-200 hover:border-slate-700'
+                        ? 'bg-gradient-to-r from-indigo-600 to-indigo-500 text-white shadow-md shadow-indigo-600/20 border border-indigo-400/40'
+                        : 'bg-slate-900 border border-slate-800 text-slate-400 hover:text-slate-200 hover:border-slate-700'
                         }`}
                     >
                       {g}
@@ -459,8 +458,8 @@ export const PredictPage: React.FC<PredictPageProps> = ({ onNavigateToHistory })
                     Studio Financial Model
                   </h3>
                   <span className={`px-2.5 py-0.5 rounded-full text-xs font-bold ${result.financial_analysis.commercial_verdict === 'Likely Profitable'
-                      ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                      : 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
+                    ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                    : 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
                     }`}>
                     {result.financial_analysis.commercial_verdict}
                   </span>

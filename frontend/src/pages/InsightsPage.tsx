@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {
-  Activity, ShieldCheck, Cpu, Layers, GitBranch,
-  CheckCircle2, AlertCircle, BarChart2, Info
+  Activity, Cpu, GitBranch,
+  CheckCircle2, AlertCircle
 } from 'lucide-react';
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
