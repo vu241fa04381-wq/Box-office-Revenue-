@@ -1,0 +1,212 @@
+{
+  "model_comparison": {
+    "Baseline_Ridge": {
+      "train": {
+        "mae_usd": 179778890.5491485,
+        "rmse_usd": 295894553.4450809,
+        "r2_score": 0.7144262919386117,
+        "mae_log": 0.355626753946646,
+        "rmse_log": 0.5015499552675211,
+        "r2_log": 0.7643751375657487,
+        "mape_percent": 44.904813922547014
+      },
+      "test_holdout": {
+        "mae_usd": 348924363.27106094,
+        "rmse_usd": 453729931.5954565,
+        "r2_score": 0.5924535545138068,
+        "mae_log": 0.5890039179877561,
+        "rmse_log": 0.7754002540196132,
+        "r2_log": 0.41273633005731836,
+        "mape_percent": 78.60019684536917
+      }
+    },
+    "Random_Forest": {
+      "train": {
+        "mae_usd": 117708493.79381816,
+        "rmse_usd": 201531577.14452463,
+        "r2_score": 0.86752605009101,
+        "mae_log": 0.23521183830994058,
+        "rmse_log": 0.31770870412907276,
+        "r2_log": 0.9054523043988147,
+        "mape_percent": 25.125427183957033
+      },
+      "test_holdout": {
+        "mae_usd": 444150792.9190354,
+        "rmse_usd": 584191258.0003428,
+        "r2_score": 0.32439577339330217,
+        "mae_log": 0.6423895368828422,
+        "rmse_log": 0.8227026177098353,
+        "r2_log": 0.33890021605019327,
+        "mape_percent": 96.41839955430675
+      }
+    },
+    "Gradient_Boosting": {
+      "train": {
+        "mae_usd": 57077386.277371876,
+        "rmse_usd": 84221842.79221435,
+        "r2_score": 0.9768637079516468,
+        "mae_log": 0.09915815626111636,
+        "rmse_log": 0.11955331608654717,
+        "r2_log": 0.9866119916201601,
+        "mape_percent": 10.088134145201135
+      },
+      "test_holdout": {
+        "mae_usd": 439684912.1076237,
+        "rmse_usd": 582325416.0920318,
+        "r2_score": 0.3287044911322965,
+        "mae_log": 0.6487677460507332,
+        "rmse_log": 0.8289216042860234,
+        "r2_log": 0.328867647872943,
+        "mape_percent": 105.13279791553404
+      }
+    }
+  },
+  "champion_model": "Gradient_Boosting",
+  "feature_importance": [
+    {
+      "feature": "log_budget",
+      "importance": 0.2681
+    },
+    {
+      "feature": "budget_raw",
+      "importance": 0.2108
+    },
+    {
+      "feature": "release_month",
+      "importance": 0.116
+    },
+    {
+      "feature": "runtime",
+      "importance": 0.0738
+    },
+    {
+      "feature": "release_day_of_week",
+      "importance": 0.0493
+    },
+    {
+      "feature": "genre_count",
+      "importance": 0.0397
+    },
+    {
+      "feature": "genre_mystery",
+      "importance": 0.032
+    },
+    {
+      "feature": "genre_adventure",
+      "importance": 0.0281
+    },
+    {
+      "feature": "genre_drama",
+      "importance": 0.0262
+    },
+    {
+      "feature": "release_year",
+      "importance": 0.0236
+    },
+    {
+      "feature": "is_franchise",
+      "importance": 0.0172
+    },
+    {
+      "feature": "is_holiday",
+      "importance": 0.0161
+    },
+    {
+      "feature": "genre_thriller",
+      "importance": 0.0147
+    },
+    {
+      "feature": "genre_action",
+      "importance": 0.0145
+    },
+    {
+      "feature": "is_summer",
+      "importance": 0.0112
+    },
+    {
+      "feature": "is_major_studio",
+      "importance": 0.0107
+    },
+    {
+      "feature": "genre_fantasy",
+      "importance": 0.0096
+    },
+    {
+      "feature": "genre_romance",
+      "importance": 0.0096
+    },
+    {
+      "feature": "genre_comedy",
+      "importance": 0.0083
+    },
+    {
+      "feature": "release_quarter",
+      "importance": 0.008
+    },
+    {
+      "feature": "genre_horror",
+      "importance": 0.0032
+    },
+    {
+      "feature": "genre_sci_fi",
+      "importance": 0.0029
+    },
+    {
+      "feature": "genre_crime",
+      "importance": 0.0025
+    },
+    {
+      "feature": "genre_family",
+      "importance": 0.0017
+    },
+    {
+      "feature": "genre_animation",
+      "importance": 0.0012
+    },
+    {
+      "feature": "genre_war",
+      "importance": 0.0006
+    },
+    {
+      "feature": "lang_hi",
+      "importance": 0.0003
+    },
+    {
+      "feature": "lang_ja",
+      "importance": 0.0001
+    },
+    {
+      "feature": "lang_en",
+      "importance": 0.0
+    },
+    {
+      "feature": "lang_ko",
+      "importance": 0.0
+    },
+    {
+      "feature": "lang_other",
+      "importance": 0.0
+    },
+    {
+      "feature": "genre_history",
+      "importance": 0.0
+    }
+  ],
+  "uncertainty_profile": {
+    "residual_std_log": 0.8128010562305062,
+    "q10_error_log": -1.373278639603324,
+    "q20_error_log": -0.9070826306231794,
+    "q80_error_log": 0.5487474389448863,
+    "q90_error_log": 0.7496492901964551,
+    "prediction_interval_80_multiplier_lower": 0.2532751986788839,
+    "prediction_interval_80_multiplier_upper": 2.1162576941302387
+  },
+  "split_metadata": {
+    "split_type": "chronological_holdout",
+    "split_year": 2017,
+    "train_samples": 54,
+    "test_samples": 31,
+    "total_samples": 85
+  },
+  "target_variable": "worldwide_theatrical_box_office_revenue_usd"
+}
